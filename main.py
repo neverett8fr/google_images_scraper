@@ -30,8 +30,7 @@ def download_img(url_array):
                     #break
                 #handle.write(block)
 
-        r = requests.get(url)
-        urllib.request.urlretrieve(url, "images/img_"+str(i)+"."+r.headers.get("Content-Type").replace("image/", ""))
+        urllib.request.urlretrieve(url, "images/img_"+str(i)+".jpeg")
 
 
 
