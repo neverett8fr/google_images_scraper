@@ -20,11 +20,11 @@ def all_img_urls(search_word, count):
 
     return output
 
-def download_img(url_array, directory):
+def download_img(url_array):
 
     for i, url in enumerate(url_array):
         # wb write binary
-        with open(directory + str(i)+".jpg", "wb") as handle:
+        with open("images/" + str(i)+".jpg", "wb") as handle:
             r = requests.get(url, stream=True)
 
             for block in r.iter_content(1024):
@@ -35,6 +35,5 @@ def download_img(url_array, directory):
 
 search_par = input("Enter the images you want to search for:  ")
 search_num = input("Enter the amount of images you want:  ")
-search_dir = input("Enter the directory:  ")
 
-download_img(all_img_urls(search_par, int(search_num), search_dir))
+download_img(all_img_urls(search_par, int(search_num)))
