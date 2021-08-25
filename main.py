@@ -8,14 +8,14 @@ def all_img_urls(search_word, count):
     j = 0
     while j < count:
         r = requests.get(
-            "https://www.google.com/search?q=" + search_word + "&tbm=isch" + "&num=3" + "&start=" + str(3*j) + "&safe=off")
+            "https://www.google.com/search?q=" + search_word + "&tbm=isch" + "&num=3" + "&start=" + str(i*j) + "&safe=off")
 
         for i, val in enumerate(str(r.text.replace(">", "").split("<")).split()):
             if "src=\"http" in val:
                    output.append(val.replace("src=\"", "").replace("\"/',", ""))
                    # print(val.replace("src=\"", "").replace("\"/',", ""))
 
-        j += 3
+        j += 1
 
     return output
 
