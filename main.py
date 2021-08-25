@@ -3,6 +3,8 @@ import requests, urllib
 def all_img_urls(search_word, count):
     # this routine returns a list of all urls with images
 
+    output = []
+
     j = 0
     while j < count:
         r = requests.get(
