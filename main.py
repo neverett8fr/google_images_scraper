@@ -1,4 +1,4 @@
-import requests, urllib
+import requests #, urllib
 
 def all_img_urls(search_word, count):
     # this routine returns a list of all urls with images
