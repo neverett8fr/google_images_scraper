@@ -23,12 +23,15 @@ def download_img_thumbnails(url_array):
 
     for i, url in enumerate(url_array):
     #    # wb write binary
-        with open("images/" + "img_" + str(i)+".jpg", "wb") as handle:
-            r = requests.get(url, stream=True)
-            for block in r.iter_content(1024):
-                if not block:
-                    break
-                handle.write(block)
+        try:
+            with open("images/" + "img_" + str(i)+".jpg", "wb") as handle:
+                r = requests.get(url, stream=True)
+                for block in r.iter_content(1024):
+                    if not block:
+                        break
+                    handle.write(block)
+        except:
+            print("Error - Not found")
 
         #try:
         #    urllib.request.urlretrieve(url, "images/img_"+str(i)+".jpeg")
