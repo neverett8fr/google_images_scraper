@@ -1,4 +1,4 @@
-import requests #, urllib
+import requests, urllib
 
 def all_img_urls(search_word, count):
     # this routine returns a list of all urls with images
@@ -22,18 +22,18 @@ def all_img_urls(search_word, count):
 def download_img_thumbnails(url_array):
 
     for i, url in enumerate(url_array):
-        # wb write binary
-        with open("images/" + "img_" + str(i)+".png", "wb") as handle:
-            r = requests.get(url, stream=True)
-            for block in r.iter_content(1024):
-                if not block:
-                    break
-                handle.write(block)
+    #    # wb write binary
+    #    with open("images/" + "img_" + str(i)+".jpg", "wb") as handle:
+    #        r = requests.get(url, stream=True)
+    #        for block in r.iter_content(1024):
+    #            if not block:
+    #                break
+    #            handle.write(block)
 
-        #try:
-            #urllib.request.urlretrieve(url, "images/img_"+str(i)+".jpeg")
-        #except:
-            #print("Not found")
+        try:
+            urllib.request.urlretrieve(url, "images/img_"+str(i)+".jpeg")
+        except:
+            print("Not found")
 
 
 
