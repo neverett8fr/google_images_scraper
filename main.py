@@ -17,14 +17,9 @@ def all_img_urls(search_word, count):
 
 def download_img_thumbnail_singular(url, number):
     try:
-        with open("images/" + "img_" + number + ".jpg", "wb") as handle:
-            r = requests.get(url, stream=True)
-            for block in r.iter_content(1024):
-                if not block:
-                    break
-                handle.write(block)
+       urllib.request.urlretrieve(url, "images/img_"+str(number)+".jpeg")
     except:
-        print("Error - Not found")
+       print("Not found")
 
 
 def download_img_thumbnails(url_array):
