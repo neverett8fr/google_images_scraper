@@ -12,10 +12,10 @@ def all_img_urls(search_word, count):
 
         for i, val in enumerate(str(r.text.replace(">", "").split("<")).split()):
             if "src=\"http" in val:
-                   output.append(val.replace("src=\"", "").replace("\"/',", ""))
+                output.append(val.replace("src=\"", "").replace("\"/',", ""))
                    # print(val.replace("src=\"", "").replace("\"/',", ""))
 
-        j += 3
+                j += 1
 
     return output
 
