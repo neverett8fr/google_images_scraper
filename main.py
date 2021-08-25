@@ -15,7 +15,7 @@ def all_img_urls(search_word, count):
                    output.append(val.replace("src=\"", "").replace("\"/',", ""))
                    # print(val.replace("src=\"", "").replace("\"/',", ""))
 
-            j += 1
+        j += 3
 
     return output
 
